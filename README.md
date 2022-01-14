@@ -5,6 +5,6 @@
   
   - Autenticação;
   - Visualizar produtos para controle/aquisição;
-  - Controle financeiro;
+  - Análise financeira;
   - Adicionar/remover produtos.
   
