@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse,redirect
+from django.contrib.auth import user_logged_in,get_user
 
-# Create your views here.
+
+
+def index(request):
+    return render(request,'index.html')
