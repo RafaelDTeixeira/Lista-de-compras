@@ -4,7 +4,9 @@
 <b>Funções:<b>
   
   - Autenticação;
+  - Segurança nas transações;
   - Visualizar produtos para controle/aquisição;
-  - Análise financeira;
   - Adicionar/remover produtos.
+  - Análise financeira;
+  
   
