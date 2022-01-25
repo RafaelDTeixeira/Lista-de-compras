@@ -15,43 +15,35 @@
 <body>
     <header>
         <center>
-            <h2>Lista de Compras</h2>
+            <h2>Lista de Compras de <strong>{{ usuario|capfirst }}</strong></h2>
         </center>        
     </header>
 
     <main>
-        
+        <p>{% now "jS F Y H:i" %}</p>
+        <p></p>
         <center>
-            <table  class="table table-hover table-striped">
+            <table  class="table table-hover table-striped" id="tabela">
                 <tr id="linha">
                     <th >Produto</th>
-                    <th >Preço</th>
-                    <th >Tipo</th>
-                    <th >Quantidade</th>
-                    <th >Descrição</th>
-                    <th >Mercado</th>
-                    <th>Total</th>
+                    <!-- <th >Usuário</th> -->
+                    <!-- <th >data</th> -->
+                    <th >Quantidade</th>                    
                 </tr>
 
                 {% for dado in dados %}
                                 
                 <tr id="linha">
                     <th >{{ dado.produto }}</th>
-                    <th >{{ dado.preco }}</th>
-                    <th >{{ dado.tipo }}</th>
-                    <th >{{ dado.quantidade }}</th>
-                    <th >{{ dado.descricao }}</th>
-                    <th >{{ dado.mercado }}</th>
-                    <th >{{ dado.preco|multiplica:dado.quantidade }}</th>                    
-                </tr>
+                    <!-- <th >{{ dado.usuario }}</th> -->
+                    <!-- <th >{{ dado.data}}</th> -->
+                    <th >{{ dado.quantidade }}</th>                    
                 {% endfor %}
             
             </table>
         </center>
 
-
     </main>
-
 
 </body>
 </html>

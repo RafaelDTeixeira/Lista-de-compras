@@ -25,24 +25,20 @@
             <table  class="table table-hover table-striped">
                 <tr id="linha">
                     <th >Produto</th>
-                    <th >Preço</th>
+                    <!-- <th >Preço</th> -->
                     <th >Tipo</th>
-                    <th >Quantidade</th>
+                    <!-- <th >Quantidade</th> -->
                     <th >Descrição</th>
-                    <th >Mercado</th>
-                    <th>Total</th>
+                    <!-- <th >Mercado</th> -->
+                    <!-- <th>Total</th> -->
                 </tr>
 
                 {% for dado in dados %}
                                 
                 <tr id="linha">
-                    <th >{{ dado.produto }}</th>
-                    <th >{{ dado.preco }}</th>
-                    <th >{{ dado.tipo }}</th>
-                    <th >{{ dado.quantidade }}</th>
-                    <th >{{ dado.descricao }}</th>
-                    <th >{{ dado.mercado }}</th>
-                    <th >{{ dado.preco|multiplica:dado.quantidade }}</th>                    
+                    <th >{{ dado.produto }}</th>                   
+                    <th >{{ dado.tipo }}</th>                    
+                    <th >{{ dado.descricao }}</th>                             
                 </tr>
                 {% endfor %}
             

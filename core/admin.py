@@ -1,10 +1,10 @@
 from django.contrib import admin
-from core.models import Compra, Lista
+from core.models import Compra,Produto
 from core.models import Categoria
 
-@admin.register(Lista)
-class ListaAdmin(admin.ModelAdmin):
-    list_display=('id','produto','preco','tipo','quantidade','descricao','mercado')
+@admin.register(Produto)
+class ProdutoAdmin(admin.ModelAdmin):
+    list_display=('id','produto','tipo','descricao')
     ordering=('tipo','produto',)
     
 @admin.register(Categoria)
@@ -14,5 +14,5 @@ class CategoriaAdmin(admin.ModelAdmin):
 
 @admin.register(Compra)
 class CompraAdmin(admin.ModelAdmin):
-    list_display=('produto','usuario','data',)
+    list_display=('produto','quantidade','preco','usuario','mercado','data',)
     ordering=('produto',)

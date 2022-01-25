@@ -13,21 +13,22 @@ class Categoria(models.Model):
     def __str__(self) -> str:
         return self.tipo
 
-class Lista(models.Model):
-    produto=models.CharField(max_length=80)
-    quantidade=models.IntegerField()
-    preco=models.DecimalField(max_digits=8,decimal_places=2,verbose_name="Preco por unidade")
+class Produto(models.Model):
+    produto=models.CharField(max_length=80)    
     tipo=models.ForeignKey(Categoria,on_delete=models.CASCADE)
     descricao=models.TextField(null=True, blank=True)
-    mercado=models.CharField(max_length=80)
+    
     
     def __str__(self) -> str:
         return self.produto
     
 class Compra(models.Model):
-    produto=models.ForeignKey(Lista,on_delete=models.CASCADE)
+    produto=models.ForeignKey(Produto,on_delete=models.CASCADE)
     usuario=models.ForeignKey(User,on_delete=models.CASCADE)
     data=models.DateTimeField(auto_now_add=True)
+    quantidade=models.IntegerField()
+    mercado=models.CharField(max_length=80)
+    preco=models.DecimalField(max_digits=8,decimal_places=2,verbose_name="Preco por unidade")
 
     def __str__(self) -> object:
         return self.produto.produto
