@@ -18,10 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from django.views import View
 from core import views
+from django.shortcuts import redirect, render
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
-    path('compras/',views.compras)
+    path('compras/',views.compras),
+    path('produtos/add',views.add_produtos),
+    path('produtos/submit',views.produto_submit),
 ]

@@ -1,0 +1,54 @@
+{% load static %}
+{% load poll_extras %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produtos</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="script" href="{% static 'js/script.js' %}">
+
+</head>
+<body>
+    <center >
+        <div style="width: 500px; text-align: center;">            
+            <form class="form-signin" action="submit" method="POST" id="formulario"> {% csrf_token %}
+                <fieldset class="sr-only">                    
+                    <legend class="sr-only">Adicionar Produtos</legend>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <label for="produto" class="sr-only">Produto: </label>
+                                <input type="text" id="produto" name="produto" class="form-control">
+                            </div>
+                            
+                            <div class="col">
+                                <label for="categoria" class="sr-only">Categoria: </label>
+                                <select id="categoria" class="form-control" name="categoria">
+                                    {% for categoria in categorias %}
+                                    <option value="{{ categoria.id }}" id="categoria" name="categoria">{{ categoria }}</option>
+                                    {% endfor %}                                    
+                                </select> 
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="descricao">Descrição: </label>                        
+                            <textarea name="descricao" id="descricao" cols="25" rows="4" class="form-control"></textarea>
+                        </div>
+                        
+                        <br>
+                        <a href="/"><input class="btn btn-lg btn-primary btn-block" type="button" value="Voltar"></a>                                                              
+                        <input class="btn btn-lg btn-success btn-block" type="submit" value="Adicionar">
+                        <button class="btn btn-lg btn-primary btn-block btn btn-warning" type="reset">Limpar</button>
+                </fieldset>
+            </form>
+        </div>
+    </center>       
+     
+
+</body>
+</html>
