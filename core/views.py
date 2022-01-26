@@ -41,3 +41,25 @@ def produto_submit(request):
                            descricao=descricao)    
 
     return redirect('/')
+
+def altera_produto(request,id):
+
+    dados={
+        'produto':Produto.objects.get(id=id),
+        }
+    print(dados)
+    return render(request,'altera_produto.html',dados)
+
+def delete_produto(request,id):
+    # Produto.objects.get(id=id).delete()
+    produto={
+        'produto':Produto.objects.get(id=id)
+    }        
+    return render(request,'produto_deletado.html',produto)
+    
+
+def deletar(request):
+    id=request.POST.get('delete')
+    Produto.objects.get(id=id).delete()
+    return redirect('/')
+   

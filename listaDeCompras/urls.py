@@ -27,4 +27,7 @@ urlpatterns = [
     path('compras/',views.compras),
     path('produtos/add',views.add_produtos),
     path('produtos/submit',views.produto_submit),
+    path('produto/<int:id>',views.altera_produto),
+    path('produto/del/<int:id>',views.delete_produto),
+    path('produto/del/submit',views.deletar)
 ]

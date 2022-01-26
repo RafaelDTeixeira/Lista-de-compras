@@ -1,0 +1,45 @@
+{% load static %}
+{% load poll_extras %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altera Produto</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="script" href="{% static 'js/script.js' %}">
+</head>
+<body>
+    <header>
+        <center>
+            <h2>Altera Produto</h2>            
+        </center>        
+    </header>
+
+    <main>
+        
+        <center>
+            <table  class="table table-hover table-striped">
+                <tr id="linha">
+                    <th >Id</th>
+                    <th >Produto</th>                    
+                    <th >Tipo</th>                    
+                    <th >Descrição</th>
+                   
+                </tr>                             
+                <tr id="linha">
+                    <th>{{ produto.id }}</th>  
+                    <th>{{ produto.produto }}</th>              
+                    <th >{{ produto.tipo }}</th>                    
+                    <th >{{ produto.descricao }}</th>                             
+                </tr>                           
+            </table>
+            <a href="/produtos/alter"><button>Alterar</button></a>
+            <a href="/produto/del/{{ produto.id }}"><button>Remover</button></a>
+            <a href="/produtos/add"><button>Acicionar</button></a>
+        </center>
+    
+</body>
+</html>
